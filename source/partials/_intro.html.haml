@@ -1,0 +1,3 @@
+%p
+  I'm a commodore 64 kid, ask me almost anything. Here are some topics I've written about:
+  = blog.tags.take(10).to_a.sort {|x,y| y.last.size <=> x.last.size }.map {|x| {tag: x.first, articles: x.last} }.map {|blog| link_to(blog[:tag], tag_path(blog[:tag]), class: "internal-link", title: "Tag '#{blog[:tag]}' has #{blog[:articles].size} posts") }.join(", ")

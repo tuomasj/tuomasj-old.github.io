@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    = partial "partials/document_head"
+  %body{ class: page_classes }
+    = partial "partials/header"
+    .page
+      = yield
+    = partial "partials/footer"
+

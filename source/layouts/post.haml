@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    = partial "partials/document_head"
+  %body{ class: page_classes }
+    = partial "partials/header"
+    .page
+      %h1= current_page.data.title
+      = yield
+    = partial "partials/footer"
+
