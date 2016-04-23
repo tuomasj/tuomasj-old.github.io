@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Service Designing My Dream Hotel for Me
+title: Service Designing My Dream Hotel
 tags: servicedesign
 ---
 I have stayed in many different kind of hotels, really cheap to the quite expensive ones, unfortunately excluding luxorious five-star hotels. Based on all my findings, this is a description of my dream hotel.
