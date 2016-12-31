@@ -54,7 +54,7 @@ From PHP, I jumped on board with Python because it had pretty cool game programm
 
 ### Ruby
 
-One day I saw video that blew my mind like Future Crew’s Second Reality. I watched a guy writing a blog with this magical programming language, using really cool framework. I was instantly hooked. Even the editor the guy used to write the code was mindblowingly simple and powerful.
+One day I saw video that blew my mind like Future Crew’s Second Reality. I watched a guy writing a blog with this magical programming language, using really cool framework. I was instantly hooked. Even the editor the guy used to write the code was mind blowingly simple and powerful.
 
 I met Ruby, Ruby on Rails and Textmate at the same time, introduced by DHH. Like many Rubyist, I met Ruby through Ruby on Rails. I remember many times confusing functionality of Ruby on Rails with Ruby, but so what? Writing code with Ruby and Ruby on Rails was so much fun!
 
