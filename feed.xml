@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/2016/12/31/my-history-with-programming-languages/"/>
     <id>http://blog.url.com/2016/12/31/my-history-with-programming-languages/</id>
     <published>2016-12-31T02:00:00+02:00</published>
-    <updated>2016-12-31T23:52:01+02:00</updated>
+    <updated>2017-01-01T00:13:28+02:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -69,7 +69,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
 
 &lt;h3&gt;Ruby&lt;/h3&gt;
 
-&lt;p&gt;One day I saw video that blew my mind like Future Crew’s Second Reality. I watched a guy writing a blog with this magical programming language, using really cool framework. I was instantly hooked. Even the editor the guy used to write the code was mindblowingly simple and powerful.&lt;/p&gt;
+&lt;p&gt;One day I saw video that blew my mind like Future Crew’s Second Reality. I watched a guy writing a blog with this magical programming language, using really cool framework. I was instantly hooked. Even the editor the guy used to write the code was mind blowingly simple and powerful.&lt;/p&gt;
 
 &lt;p&gt;I met Ruby, Ruby on Rails and Textmate at the same time, introduced by DHH. Like many Rubyist, I met Ruby through Ruby on Rails. I remember many times confusing functionality of Ruby on Rails with Ruby, but so what? Writing code with Ruby and Ruby on Rails was so much fun!&lt;/p&gt;
 
