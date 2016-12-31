@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/</id>
+  <link href="http://blog.url.com/"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2016-12-31T02:00:00+02:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>My History with Programming Languages</title>
+    <link rel="alternate" href="http://blog.url.com/2016/12/31/my-history-with-programming-languages/"/>
+    <id>http://blog.url.com/2016/12/31/my-history-with-programming-languages/</id>
+    <published>2016-12-31T02:00:00+02:00</published>
+    <updated>2016-12-31T23:52:01+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2&gt;My Earliest Memory of Programming Language&lt;/h2&gt;
+
+&lt;p&gt;My earliest memory related to programming goes way back into the 80’s. I was with my cousin, playing with He-Man figures. Obviously, we needed a portal. We tried to make it with pen and paper but there was nothing cool about it, it was a portal after all. Portals need to be cool.&lt;/p&gt;
+
+&lt;p&gt;I realised that if I would turn on my computer and change the background color, it would be a cool portal. Naturally, after few minutes, I wanted to change it constantly. That was probably the first time I wanted to read a book to actually learn something. It’s a good thing that Spectravideo 328 had pretty good Basic-manual. After reading through the manual I made a animation with for-loop and I had a portal beyond any coolness! I think I was about 10 year old back then.&lt;/p&gt;
+
+&lt;h2&gt;The List of Programming Languages&lt;/h2&gt;
+
+&lt;p&gt;Here is a list of programming languages I’ve had pleasure to work with. Since I learned programming it has been my hobby ever since, I don’t think there is a week that I haven’t written at least few lines of code.&lt;/p&gt;
+
+&lt;h3&gt;Basic Programming Language&lt;/h3&gt;
+
+&lt;p&gt;My first computers were Spectravideo 328, Spectravideo 728 and Commodore 64. I never got into anything more powerful, Basic programming language is what I was using. Newer tried Commodore 64 Assembler, even that was the thing the cool kids used.&lt;/p&gt;
+
+&lt;p&gt;Thank You Spectravideo for doing awesome job on the manuals. I thought myself programming from a books written in foreign language (English) in a method that pretty much looked like the method Zed Shaw used in his &lt;a href="https://learnrubythehardway.org/"&gt;programming books&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I also used Basic when I got Atari 512 and STOS. It was an development environment built for making games. You have no idea how cool it was back then. Of course next year they released AMOS for Amiga and it had no line numbers! How you can write programs without line numbers?&lt;/p&gt;
+
+&lt;p&gt;My options were Atari ST and Amiga 500. The sales person in Atari-shop was so convincing with some image editor. It was so convincing that I didn’t even want to see what Amiga 500 could do…&lt;/p&gt;
+
+&lt;h3&gt;Turbo Pascal&lt;/h3&gt;
+
+&lt;p&gt;I got my first PC and I got a copy of Turbo Pascal. Pascal did not use line numbers, it used functions and procedures! It had a lot of memory, I could load images into memory and use them as sprites. I was walking on a very steep path of game programming.
+I could reference a specific point in memory, read and write bytes into it, but back then, I really did not find any use for it. I did my pixel drawing with Turbo Pascal standard library. There was no internet, there was only few BBS’s where I could download tutorials.&lt;/p&gt;
+
+&lt;p&gt;This was about the time I got familiar with Demoscene. The intros and demos for Amiga blew my mind several times, and I tried to replicate the easiest effects with Turbo Pascal. Even the easiest effects seems to be out of my reach.&lt;/p&gt;
+
+&lt;h3&gt;C/C++&lt;/h3&gt;
+
+&lt;p&gt;After a while, I grew tired of restrictions of Turbo Pascal. I somehow got my hands on DJGPP and Watcom-products. C was a total beast, it could do pretty much anything! I could reboot my computer by using variables in a wrong way. I found out I did not need any libraries if I would like to draw pixels on screen, there was a certain point in memory where I could write data and it would show up on my screen instantly. Crazy!&lt;/p&gt;
+
+&lt;p&gt;I wrote my own Sprite-libraries, Polygon-drawing libraries, keyboard handling by using interruptions, all sorts of things are taken granted in 2010’s. One great thing about C was that I could use inline assembler to do really fast things. I could fill my screen with specific color with just few commands. (&lt;code&gt;rep stosb&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;I did intros, demos and really simple games that used 3D, but it was really hard to write 3D engine in C. That led to me to C++ and object oriented programming. A 3D engine was much easier to write by using objects that are linked to other objects, inheriting positions and rotations from parent objects. That was the way I learned object oriented programming, even thought I didn’t know the terminology at all back then.&lt;/p&gt;
+
+&lt;h3&gt;Java&lt;/h3&gt;
+
+&lt;p&gt;I was about 20 year old when I first me Java and JVM. First, it was really weird not having direct access to memory and let the JVM worry about deleting all unused variables. Eventually I got over it. I’ve never written any big programs with Java as a hobby, I’ve only written bigger Java projects at work. I wasn’t the biggest fan of Java back then.&lt;/p&gt;
+
+&lt;p&gt;I eventually ended up in a game company that did mobile games. The mobile phones back then were using b&amp;amp;W screen and there was just few kilobytes of memory. My C/C++ skills came handy when I had to squeeze Java programs into small memory footprint, especially fixed-point maths.&lt;/p&gt;
+
+&lt;h3&gt;PHP&lt;/h3&gt;
+
+&lt;p&gt;During my Java-phase, I also got interested in writing web sites. I tried Microsoft ASP but PHP was much easier to understand. I did web sites with PHP and eventually I ended up writing my own MVC-framework. It never got into production-quality level, since PHP had bit of problems back then that prevented me to do the things I wanted.&lt;/p&gt;
+
+&lt;h3&gt;Python&lt;/h3&gt;
+
+&lt;p&gt;From PHP, I jumped on board with Python because it had pretty cool game programming libraries (LibSDL). I tried web programming with few frameworks but somehow I didn’t get along with Python. Every time I got frustrated with Python I jumped back to PHP. After a while I got frustrated with PHP so I came back to Python. This happened many times.&lt;/p&gt;
+
+&lt;h3&gt;Ruby&lt;/h3&gt;
+
+&lt;p&gt;One day I saw video that blew my mind like Future Crew’s Second Reality. I watched a guy writing a blog with this magical programming language, using really cool framework. I was instantly hooked. Even the editor the guy used to write the code was mindblowingly simple and powerful.&lt;/p&gt;
+
+&lt;p&gt;I met Ruby, Ruby on Rails and Textmate at the same time, introduced by DHH. Like many Rubyist, I met Ruby through Ruby on Rails. I remember many times confusing functionality of Ruby on Rails with Ruby, but so what? Writing code with Ruby and Ruby on Rails was so much fun!&lt;/p&gt;
+
+&lt;p&gt;I remember the restful changes introduced in Ruby on Rails 1.2 and the big merge with Merb and Ruby on Rails. The biggest factor of my warm feelings to Ruby and Ruby on Rails is the community. There has been so many cool &amp;amp; weird people, that it would be unfair to list them all.&lt;/p&gt;
+
+&lt;p&gt;I’ve contributes to few Ruby open-source projects but my biggest contribution to Ruby community is &lt;a href="https://rubysauna.github.io"&gt;Rubysauna&lt;/a&gt;, which we have been organising with &lt;a href="https://twitter.com/polarblau"&gt;@polarblau&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Javascript&lt;/h3&gt;
+
+&lt;p&gt;Everything that can be written in Javascript, eventually will be written in Javascript. I’ve written a ton of Javascript, I’ve built a &lt;a href="http://www.gridlover.net"&gt;typography tool&lt;/a&gt; with &lt;a href="https://twitter.com/sakamies"&gt;Ville Vanninen&lt;/a&gt; that has been rewritten number of times. I have a suspicion that next rewrite will be with React.&lt;/p&gt;
+
+&lt;p&gt;Even Javascript is a language that, in past 10 years, I’ve most likely written most lines of code, I still don’t consider myself a Javascript developer.&lt;/p&gt;
+
+&lt;h3&gt;Elixir &amp;amp; Go&lt;/h3&gt;
+
+&lt;p&gt;Even though Ruby is my weapon of choice pretty much everything, I’ve got to know Go and Elixir a bit. I’ve spent enough time with both of them to understand why people like them.&lt;/p&gt;
+
+&lt;p&gt;With Go, I like how the libraries are compact but still really powerful.&lt;/p&gt;
+
+&lt;p&gt;Elixir has been huge in Ruby community. It’s built one of the Ruby legends. Elixir has taken the best part of Ruby and put Erlang VM underneath.&lt;/p&gt;
+
+&lt;p&gt;I don’t know what’s my next favourite programming language is, but in 2016, I consider myself as Ruby developer.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Service Designing My Dream Hotel</title>
+    <link rel="alternate" href="http://blog.url.com/2016/04/23/service-designing-my-dream-hotel/"/>
+    <id>http://blog.url.com/2016/04/23/service-designing-my-dream-hotel/</id>
+    <published>2016-04-23T03:00:00+03:00</published>
+    <updated>2016-12-31T23:19:45+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I have stayed in many different kind of hotels, really cheap to the quite expensive ones, unfortunately excluding luxorious five-star hotels. Based on all my findings, this is a description of my dream hotel.&lt;/p&gt;
+
+&lt;h2&gt;Email Before The Arrival&lt;/h2&gt;
+
+&lt;p&gt;I would be really happy if I would get an email from the hotel, explaining few basic details:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to get in to the hotel (From airport or train station etc)&lt;/li&gt;
+&lt;li&gt;If I take the taxi, how much is should cost?&lt;/li&gt;
+&lt;li&gt;The time for check-in?&lt;/li&gt;
+&lt;li&gt;A hotel contact phone number with proper HTML markup and plain text, so when I call, I can just press the number on the email&lt;/li&gt;
+&lt;li&gt;Email should be in HTML and plain text, since I might not have good network when I check my emails&lt;/li&gt;
+&lt;li&gt;Do not put any textual information on images, even if it allows you to use the fonts you want&lt;/li&gt;
+&lt;li&gt;Small intro about the hotel, breakfast, facilities (gym, pool, sauna)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In general, the email should contain all the information that I would normally ask during the check-in.&lt;/p&gt;
+
+&lt;h2&gt;Check-in&lt;/h2&gt;
+
+&lt;p&gt;By the time I get to the hotel, in most cases I am quite tired and I have zero mental energy. Don’t make me think. Don’t make me answer unnecessary questions. Give me the traveller details form. Give me all the complimentary free stuff (i.e. daily newspaper) without asking and direct me to the elevators.&lt;/p&gt;
+
+&lt;p&gt;Good service is context related, and in this context, the best possible service is to get me into my room as fast as possible.&lt;/p&gt;
+
+&lt;h2&gt;The Room&lt;/h2&gt;
+
+&lt;p&gt;Here is some things I would like to see in a hotel room:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Wifi password clearly visible somewhere in the room — Don’t make me think and search for the password&lt;/li&gt;
+&lt;li&gt;A safe box that can fit at least 15” laptop&lt;/li&gt;
+&lt;li&gt;A few electric plugs that do not turn off when I remove the key card, so I can charge my laptop when I’m out of the room&lt;/li&gt;
+&lt;li&gt;HDMI input for the TV — Using a bigger monitor with a laptop does wonders for my slouching posture&lt;/li&gt;
+&lt;li&gt;Few hooks where to hang luggage, bags, backbags
+
+&lt;ul&gt;
+&lt;li&gt;I sleep better when my stuff it not laying on the floor, it’s just a habit I have, not necessary linked to the general condition of the room&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Hooks/bars where I can hang my laundry rope
+— The hotel room does not need to look it’s been over-engineered by a seasoned sea-captain, but few strategically placed bars where the rope can be tied for drying my clothes
+
+&lt;ul&gt;
+&lt;li&gt;I travel light so occasionally I want to wash few clothes in the sink, because I don&amp;rsquo;t want to pay laundry for one T-shirt&lt;/li&gt;
+&lt;li&gt;I would suggest place the bars/hooks in the the wc/shower room&lt;/li&gt;
+&lt;li&gt;A sink wash with a with a drain plug&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Put one plug near the safe box and make a small gap in the safe box door that I can run the cord into the safe box and charge my laptop when it’s inside the box&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Bonus: The IoT Hotel Room&lt;/h2&gt;
+
+&lt;p&gt;Imagine a hotel room, which tracks the temperature, CO2-levels, electricity consumption, water consumption, floor pressure and lighting levels. It would log the time how long you have spent in the room, timestamp when the electric lock was opened and closed. It would know what food I ate at the restaurant, it would log the calories and break-down of all nutritional facts. Everything you do while you are staying in the hotel.&lt;/p&gt;
+
+&lt;p&gt;When you check out, the hotel would email you a visualised report of your stay, with attachments of all the raw data in CSV or JSON format for the people who like visualising the data.&lt;/p&gt;
+
+&lt;p&gt;Since this is really personal data, the data policy should state that my personal data would be anonymised after my stay. The individual customers should not be identified from the data saved after the checkout. I also could give permission to hotel to store my data.&lt;/p&gt;
+
+&lt;p&gt;This would be so cool! Would this be financially viable? Maybe, if the investment doesn’t get out of hands. This equipment would not increase the star-ranking, but it would definitely make your hotel to stand out in the crowd.&lt;/p&gt;
+
+&lt;p&gt;This would mean more paying customers, most likely data scientists.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>I Spend $604 per Year on Internet Services</title>
+    <link rel="alternate" href="http://blog.url.com/2015/08/01/I-spend-604-dollars-per-year-on-internet-services/"/>
+    <id>http://blog.url.com/2015/08/01/I-spend-604-dollars-per-year-on-internet-services/</id>
+    <published>2015-08-01T03:00:00+03:00</published>
+    <updated>2016-12-31T23:19:45+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I’ve listed all my monthly or yearly subscriptions so I can check my situation on next year.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Github - $7 / month&lt;/strong&gt; - Currently, I have just one active private repository, where we are developing &lt;a href="http://www.gridlover.net"&gt;gridlover&lt;/a&gt; with &lt;a href="http://www.pumpula.net"&gt;Ville&lt;/a&gt;. I rarely use issues or wiki, I just use Github as a source repository. Yes, I could change to Bitbucket and host my few private repositories there for free, but so far I’m happy with Github and their micro plan.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Spotify - €9.99 / month&lt;/strong&gt; - This is a service that I have had the pleasure of unsubscribing for many times. I just can’t stand the way Spotify tries to growth hack me. I don’t want to publish anything so that Spotify can use that information to get more users. The user interface is slow and ugly, especially on mobile. But in the end, I just want to listen music, so I have also re-subscribed several times…&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Amazon AWS - approx. $5 / month&lt;/strong&gt; - Amazon Web Services is just great. I host my website on S3, I have few domains which use Route53 as name server, it all works.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Domains - $27,4 / month&lt;/strong&gt; - This is the &lt;em&gt;holy shit&lt;/em&gt; moment. I am paying $329 per year for domains. Almost half of them sitting unused. The crown jewel is my vanity domain &lt;code&gt;tuom.as&lt;/code&gt; which costs $99 per year.&lt;/p&gt;
+
+&lt;p&gt;I’m spending &lt;strong&gt;$604&lt;/strong&gt; per year on services. My list is really basic, there are no exotic services or anything. It’s just web hosting, domains, source code repository hosting and music. There must be at least some room for optimization.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Faster Prototyping with Ruby on Rails, Bourbon, Neat and Bitters</title>
+    <link rel="alternate" href="http://blog.url.com/2015/01/06/faster-prototyping-with-ruby-on-rails-bourbon-neat-bitters/"/>
+    <id>http://blog.url.com/2015/01/06/faster-prototyping-with-ruby-on-rails-bourbon-neat-bitters/</id>
+    <published>2015-01-06T02:00:00+02:00</published>
+    <updated>2016-12-31T23:19:45+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;In the &lt;a href="/prototyping-cost-for-web-application-is-approaching-zero.html"&gt;previous blog post&lt;/a&gt;, I showed how you can run your prototypes with only few dollars per month. Now I’m going to show you how to prototype fast.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.bourbon.io"&gt;Bourbon&lt;/a&gt;, &lt;a href="http://neat.bourbon.io"&gt;Neat&lt;/a&gt; and &lt;a href="http://bitters.bourbon.io"&gt;Bitters&lt;/a&gt; are open source projects by &lt;a href="http://ww.thoughtbot.com"&gt;Thoughtbot&lt;/a&gt;. They are &lt;a href="http://sass-lang.com"&gt;SASS&lt;/a&gt; mixin libraries. It means they can write a lot of CSS for you. If you happen to lack web design skills (like me!), Bitters is a default stylesheet that makes your prototype look good.&lt;/p&gt;
+
+&lt;p&gt;For fast prototyping, my weapon of choice is Ruby on Rails. It’s a full-blown web framework, but I’m using a very limited set of features, to preprocess the SCSS and SASS files into CSS. There are other options for rapid prototyping in Ruby ecosystem as well, &lt;a href="http://www.sinatrarb.com"&gt;Sinatra&lt;/a&gt;, &lt;a href="http://www.padrinorb.com"&gt;Padrino&lt;/a&gt; and &lt;a href="http://www.middlemanapp.com"&gt;Middleman&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Grid layout and Directory Structure&lt;/h2&gt;
+
+&lt;p&gt;First, let’s install Bourbon and Neat. Go ahead and read the installation instructions for both projects. Neat is a set of functions (they are called mixins) that help building a responsive grid for your prototype. To use Bourbon and other libraries, you need to use SCSS or SASS, normal CSS will not work.&lt;/p&gt;
+
+&lt;p&gt;Second, structure the files so you don’t get overwhelmed by the stylesheets. It helps to keep the stylesheets organised in small files. I keep my application.css.scss small. No styles, just import other files. For these examples, I&amp;rsquo;m using SCSS since it&amp;rsquo;s looks almost like CSS, so everybody who knows CSS can understand these examples.&lt;/p&gt;
+&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// application.css.sass
+&lt;/span&gt;
+&lt;span class="c1"&gt;// import libraries &amp;amp; frameworks
+&lt;/span&gt;&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"normalize"&lt;/span&gt;
+&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"bourbon"&lt;/span&gt;
+&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"base/base"&lt;/span&gt;
+&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"neat"&lt;/span&gt;
+
+&lt;span class="c1"&gt;// import application specific files
+&lt;/span&gt;&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"partials/responsive"&lt;/span&gt;
+&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"partials/layout"&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Start with Mobile First&lt;/h2&gt;
+
+&lt;p&gt;Build your stylesheets for mobile first. Design the layout for mobile, and then add special rules for tablet and desktop layouts. Use &lt;a href="http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint"&gt;Neat breakpoints&lt;/a&gt; to create a small set of media query helpers that you can use in your stylesheet.&lt;/p&gt;
+&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_responsive.sass
+&lt;/span&gt;
+&lt;span class="nv"&gt;$mobile-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;480px&lt;/span&gt;
+&lt;span class="nv"&gt;$tablet-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;760px&lt;/span&gt;
+
+&lt;span class="nv"&gt;$tablet&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;new-breakpoint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min-width&lt;/span&gt; &lt;span class="nv"&gt;$mobile-width&lt;/span&gt; &lt;span class="n"&gt;max-width&lt;/span&gt; &lt;span class="nv"&gt;$tablet-width&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;$desktop&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;new-breakpoint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min-width&lt;/span&gt; &lt;span class="nv"&gt;$tablet-width&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This creates two helpers called $tablet and $mobile. Let’s test the breakpoints by changing the background color based on the width of the browser.&lt;/p&gt;
+&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_layout.sass
+&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;
+  &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;white&lt;/span&gt;
+
+  &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;media&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$tablet&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;light-gray&lt;/span&gt;
+
+  &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;media&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$desktop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;gray&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Bring forth the Responsive Grid&lt;/h2&gt;
+
+&lt;p&gt;Neat is a simple grid framework. It’s only function is to help you build a grid system for you. By default, Neat has 12 column grid.&lt;/p&gt;
+
+&lt;p&gt;Let’s build a simple responsive grid. On mobile layout, it is a single column layout. For tablet and desktop, it is a two column layout.&lt;/p&gt;
+
+&lt;p&gt;The default layout is a single &lt;code&gt;.grid-cell&lt;/code&gt; which is 12 columns wide in the grid system. After the tablet breakpoint, the width of &lt;code&gt;.grid-cell&lt;/code&gt; is set to 6 columns. The grid system width is 12 columns, so now the browser can fit two &lt;code&gt;.grid-cell&lt;/code&gt;-elements in a one row. The same applies for desktop layout which is set to 6 columns as well.&lt;/p&gt;
+
+&lt;p&gt;This is an example of mobile first approach. The default styles are applied on all screen sizes, from narrowest width. Then the wider variations for the tablet and desktop are added on the top of mobile layout.&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_layout.scss
+&lt;/span&gt;&lt;span class="nc"&gt;.grid-row&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;outer-container&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+  &lt;span class="nc"&gt;.grid-cell&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;span-columns&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;media&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$tablet&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;span-columns&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;media&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$desktop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;span-columns&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="nc"&gt;.grid-single-cell&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;span-columns&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As a bonus, there is also a &lt;code&gt;.grid-single-cell&lt;/code&gt; that always spans across 12 columns, filling the row. This is useful for “hero” content, like logo or login form.&lt;/p&gt;
+
+&lt;p&gt;And last but not least, Bitters. Just throw it in your &lt;code&gt;application.css.scss&lt;/code&gt; and your prototype starts to look clean and simple. It’s a simple default stylesheet that needs very little customising. Check out the Bitters &lt;a href="http://bitters.bourbon.io/example.html"&gt;example page&lt;/a&gt;. It looks so good, that it gives the impression that your prototype is an actual product. Then your prototype is ready to fulfil its purpose.&lt;/p&gt;
+
+&lt;h2&gt;What About The Other Frameworks?&lt;/h2&gt;
+
+&lt;p&gt;There are other options as well, &lt;a href="http://purecss.io"&gt;Purecss&lt;/a&gt;, &lt;a href="http://foundation.zurb.com/"&gt;Foundation&lt;/a&gt; or &lt;a href="http://getbootstrap.com"&gt;Bootstrap&lt;/a&gt;? These are complete solutions. They have communities building themes and extensions, with a lot of documentation found all over the web. The only down-side that I can think of is that these frameworks expect you to build your stylesheets following the philosophy of the framework.&lt;/p&gt;
+
+&lt;p&gt;The idea behind Bourbon &amp;amp; Neat are different than CSS frameworks. By using SASS mixins, you create only those CSS rules that you need, and keep the stylesheets nice and tidy. On the other hand, CSS Frameworks have all the bells and whistles with many different grid systems. This naturally makes the stylesheet bigger in size.&lt;/p&gt;
+
+&lt;p&gt;In my opinion, both options are good, pick one that suits you better. It only matters if you get your prototype in front of people.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Prototyping cost for Web Application is approaching zero</title>
+    <link rel="alternate" href="http://blog.url.com/2014/12/31/prototyping-cost-for-web-application-is-approaching-zero/"/>
+    <id>http://blog.url.com/2014/12/31/prototyping-cost-for-web-application-is-approaching-zero/</id>
+    <published>2014-12-31T02:00:00+02:00</published>
+    <updated>2016-12-31T23:19:45+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Technology is becoming trivial. Manufacturing consumer goods becomes easier and easier.
+Building software is easy and building web products is even easier than ever, thanks to the awesome open source community.
+Pretty much any modern company is a software company. Software is eating the world.&lt;/p&gt;
+
+&lt;p&gt;What if you write a software that nobody finds useful? Thats where you make a quick prototype.
+You give the prototype into the hands of your customer. Watch how they interact with it.
+Thats how you validate your assumptions.
+The prototype is a set of fine-tuned experiments about your product idea.&lt;/p&gt;
+
+&lt;p&gt;The key to getting evidence that you can trust is to fool your users to think that they are using a real product.
+To accomplish this illusion, you need to provide good user experience.
+A great example of fast and cheap product idea validation is the story of how Buffer started and &lt;a href="https://blog.bufferapp.com/idea-to-paying-customers-in-7-weeks-how-we-did-it"&gt;how they got paying customers in 7 weeks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My dad uses a OpenOffice spreadsheet template to create and print invoices.
+Using a spreadsheet application feels bit too much for such a small task, so
+I built a super-simple web app for &lt;a href="http://tinyinvoice.net"&gt;creating invoices&lt;/a&gt; on the web.
+I launched it as a prototype. Slowly evolving into a working product that actually provides value to the users.
+Since I wasn’t sure my dad actually switches from spreadsheet invoices to my application, I decided to keep my running costs as low as possible.&lt;/p&gt;
+
+&lt;p&gt;I originally launched my app as Tinybill.co but I switched to &lt;a href="http://tinyinvoice.net"&gt;Tinyinvoice.net&lt;/a&gt;.
+It&amp;rsquo;s better domain because you already know what is it about when you&amp;rsquo;re typing the address on the browser.&lt;/p&gt;
+
+&lt;p&gt;Here is my minimal costs for Tinyinvoice web application:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Application is hosted in &lt;a href="http://www.heroku.com"&gt;Heroku&lt;/a&gt;, using free plan since Tinyinvoice doesn’t currently need any databases and the free plan is still beefy enough to handle the traffic&lt;/li&gt;
+&lt;li&gt;The domain for Tinyinvoice is registered on &lt;a href="https://hover.com/TcZT3Jx8"&gt;Hover.com (referral link)&lt;/a&gt; for $10 per year&lt;/li&gt;
+&lt;li&gt;Name servers are currently on Amazon Route costing about $2 per month&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://eepurl.com/bap75D"&gt;Mailchimp.com (referral link)&lt;/a&gt; is my newsletter service provider for Tinyinvoice, for such a small newsletter it costs nothing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My monthly expenses for Tinyinvoice.net are about &lt;strong&gt;three dollars per month&lt;/strong&gt;.
+If you are a person who runs on inspiration, eventually you have multiple applications.
+With this kind of minimal cost structure approach, running 10 prototypes on the web does not bankrupt you.&lt;/p&gt;
+
+&lt;p&gt;Start prototyping, there is one excuse less to worry.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>My talk at Oulu Agile Seminar</title>
+    <link rel="alternate" href="http://blog.url.com/2014/08/13/my-talk-at-oulu-agile-seminar/"/>
+    <id>http://blog.url.com/2014/08/13/my-talk-at-oulu-agile-seminar/</id>
+    <published>2014-08-13T03:00:00+03:00</published>
+    <updated>2016-12-31T23:19:45+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I gave a talk where I made a claim how happy people build better products than agile teams.
+Don&amp;rsquo;t get me wrong, software projects using agile methods are so much better
+than software projects using waterfall and derivatives like SAFe. &lt;em&gt;(Yes, SAFe is a waterfall)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;My point is, without emphasizing the human aspect, the level of perfection in your agile processes is not helping,
+if your team is unhappy. So, instead of solving the team productivity issues by introducing new agile processes, try making your team happy.
+Accept the new normal, the team is as close as possible to long-term maximum velocity when they are happy.
+Sacrifice the illusion of controlling everything in your software project, and you might gain some serious productivity in a long term. It&amp;rsquo;s worth a try, right?&lt;/p&gt;
+
+&lt;p&gt;Please note that my slides are pretty minimal, so just by going through the slide deck might not give the full picture of the talk. I&amp;rsquo;ve also replaces the videos from my presentation with still screenshots. Sorry about that.&lt;/p&gt;
+
+&lt;script async class="speakerdeck-embed" data-id="df3d46d004ff013270b16a6b763b0851" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;The complete name of the event was EIT ICT Labs Symposium on Trusted Cloud and Future Enterprises, I took the liberty to shortening it to Oulu Agile Seminar :)&lt;/p&gt;
+
+&lt;p&gt;UPDATE: After my talk I was pointed out that even though we value solid facts when making new product concepts,
+the &amp;ldquo;happiness&amp;rdquo; is not measured in a way that produces scientifially valid results.
+That is very true, and after giving it more thought, I still think it&amp;rsquo;s a good way. See, this is where you place your trust in the people :)&lt;/p&gt;
+
+&lt;p&gt;But if there is a better way, most likely, we are going to give it a shot.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

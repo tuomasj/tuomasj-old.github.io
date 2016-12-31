@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<title>Simple Server Provisioning with Sunzi</title>
+<link href="/css/all.css" rel="stylesheet" />
+<script src="/js/jquery-1.12.0.min.js"></script><script src="/js/custom_analytics.js"></script>
+
+</head>
+<body class='x2014 x2014_06 x2014_06_03 x2014_06_03_simple-server-provisioning-with-sunzi x2014_06_03_simple-server-provisioning-with-sunzi_index'>
+
+<div class='page'>
+<h1>Simple Server Provisioning with Sunzi</h1>
+<p>There is that one group of people, who have their own <a href="http://tinybill.net">little</a> <a href="http://gridlover.net">hobby</a> <a href="http://yourdream.io">projects</a> that needs a server or two. One easy solution is to deploy the project into <a href="http://heroku.com">Heroku</a> free plan. It&rsquo;s great, it does not cost you anything and you can quickly test if your project flies. If it does gain traction, just swipe your credit card and level up in Heroku. You practically convert money into more free time and less headaches.</p>
+
+<h2>Server Provisioning</h2>
+
+<p>What if you application doesn&rsquo;t really work perfectly hosting services? What if you want to set up your own servers just because that is how you roll. You could do it manually, typing each command on console, or you could automate the process as much as possible. Just run one command and after it&rsquo;s complete, your server is ready to go. That is called server provisioning.</p>
+
+<p>I&rsquo;ve tried <a href="http://puppetlabs.com/">Puppet</a> and <a href="http://www.getchef.com/">Chef</a>. They both are very powerful monsters. They definitely can do the job when you need server provisioning and thats why the big boys are using them. They also are too complex for my needs. They both are complex and it takes time to configure the setup. I like simple and fast.</p>
+
+<h2>Sunzi</h2>
+
+<p>Sunzi is great because it&rsquo;s simple. It&rsquo;s written in Ruby and you can install it using Rubygems. It does not have custom configuration language. You do not have to learn a new way to configure your server. <strong>Sunzi is based on shell scripts.</strong> All your server provisioning is plain shell scripts. You write the scripts on your local machine, and Sunzi moves those scripts to the server and runs them on there.</p>
+
+<p>When you install sunzi, it will create a file called <code>install.sh</code>. It is the file which is run on your server. If you want, you could actually put all your commands into that file, but it&rsquo;s easier to use <code>recipes/</code> folder for specific tasks. It also creates <code>sunzi.yml</code> file where your common configuration settings are, like application name or username for database. You can check out the complete directory structure from <a href="https://github.com/kenn/sunzi#directory-structure">here</a>.</p>
+
+<p>Like I said, it&rsquo;s just bunch of shell scripts that are transferred to the server. After all files are transferred, Sunzi runs the <code>install.sh</code> on your server.</p>
+
+<h2>What next?</h2>
+
+<p>If you are happy with Heroku, I recommend that you keep using it. Setting up your own servers takes time, and it is not as simple as it sounds. I don&rsquo;t even want to calculate how many hours I have wasted just for learning server provisioning. But if you&rsquo;re stubborn and want to have more control with your server, Sunzi might be just the tool for you.</p>
+
+<p>I am not going to explain how to use Sunzi because others have already done great job with that. Here are few links that will get on full speed with Sunzi.</p>
+
+<ul>
+<li><a href="https://github.com/kenn/sunzi">Sunzi</a> on Github</li>
+<li><a href="http://www.youtube.com/watch?v=3mwupXqtkmg">Deploy Rails 4.1 app with Sunzi and Capistrano 3</a> screencast</li>
+</ul>
+
+<p>If Chef or Puppet are just too complex for your needs, try Sunzi.</p>
+
+</div>
+<footer>
+<hr>
+<span><a href="/" class="internal-link">Home</a></span>
+<span><a href="../../../../about/" class="internal-link">About</a></span>
+<span><a href="../../../../now/" class="internal-link">Now</a></span>
+<span><a href="//github.com/tuomasj">Github</a></span>
+<span><a href="//twitter.com/tuomasj">Twitter</a></span>
+<span><a href="//linkedin.com/in/tuomasj">LinkedIn</a></span>
+</footer>
+
+</body>
+</html>

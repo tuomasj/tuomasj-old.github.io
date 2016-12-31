@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<title>Faster Prototyping with Ruby on Rails, Bourbon, Neat and Bitters</title>
+<link href="/css/all.css" rel="stylesheet" />
+<script src="/js/jquery-1.12.0.min.js"></script><script src="/js/custom_analytics.js"></script>
+
+</head>
+<body class='x2015 x2015_01 x2015_01_06 x2015_01_06_faster-prototyping-with-ruby-on-rails-bourbon-neat-bitters x2015_01_06_faster-prototyping-with-ruby-on-rails-bourbon-neat-bitters_index'>
+
+<div class='page'>
+<h1>Faster Prototyping with Ruby on Rails, Bourbon, Neat and Bitters</h1>
+<p>In the <a href="/prototyping-cost-for-web-application-is-approaching-zero.html">previous blog post</a>, I showed how you can run your prototypes with only few dollars per month. Now I’m going to show you how to prototype fast.</p>
+
+<p><a href="http://www.bourbon.io">Bourbon</a>, <a href="http://neat.bourbon.io">Neat</a> and <a href="http://bitters.bourbon.io">Bitters</a> are open source projects by <a href="http://ww.thoughtbot.com">Thoughtbot</a>. They are <a href="http://sass-lang.com">SASS</a> mixin libraries. It means they can write a lot of CSS for you. If you happen to lack web design skills (like me!), Bitters is a default stylesheet that makes your prototype look good.</p>
+
+<p>For fast prototyping, my weapon of choice is Ruby on Rails. It’s a full-blown web framework, but I’m using a very limited set of features, to preprocess the SCSS and SASS files into CSS. There are other options for rapid prototyping in Ruby ecosystem as well, <a href="http://www.sinatrarb.com">Sinatra</a>, <a href="http://www.padrinorb.com">Padrino</a> and <a href="http://www.middlemanapp.com">Middleman</a>.</p>
+
+<h2>Grid layout and Directory Structure</h2>
+
+<p>First, let’s install Bourbon and Neat. Go ahead and read the installation instructions for both projects. Neat is a set of functions (they are called mixins) that help building a responsive grid for your prototype. To use Bourbon and other libraries, you need to use SCSS or SASS, normal CSS will not work.</p>
+
+<p>Second, structure the files so you don’t get overwhelmed by the stylesheets. It helps to keep the stylesheets organised in small files. I keep my application.css.scss small. No styles, just import other files. For these examples, I&rsquo;m using SCSS since it&rsquo;s looks almost like CSS, so everybody who knows CSS can understand these examples.</p>
+<pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1">// application.css.sass
+</span>
+<span class="c1">// import libraries &amp; frameworks
+</span><span class="k">@import</span> <span class="s">"normalize"</span>
+<span class="k">@import</span> <span class="s">"bourbon"</span>
+<span class="k">@import</span> <span class="s">"base/base"</span>
+<span class="k">@import</span> <span class="s">"neat"</span>
+
+<span class="c1">// import application specific files
+</span><span class="k">@import</span> <span class="s">"partials/responsive"</span>
+<span class="k">@import</span> <span class="s">"partials/layout"</span>
+</pre></td></tr></tbody></table>
+</code></pre>
+<h2>Start with Mobile First</h2>
+
+<p>Build your stylesheets for mobile first. Design the layout for mobile, and then add special rules for tablet and desktop layouts. Use <a href="http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint">Neat breakpoints</a> to create a small set of media query helpers that you can use in your stylesheet.</p>
+<pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_responsive.sass
+</span>
+<span class="nv">$mobile-width</span><span class="p">:</span> <span class="m">480px</span>
+<span class="nv">$tablet-width</span><span class="p">:</span> <span class="m">760px</span>
+
+<span class="nv">$tablet</span><span class="p">:</span> <span class="nf">new-breakpoint</span><span class="p">(</span><span class="n">min-width</span> <span class="nv">$mobile-width</span> <span class="n">max-width</span> <span class="nv">$tablet-width</span><span class="p">)</span>
+<span class="nv">$desktop</span><span class="p">:</span> <span class="nf">new-breakpoint</span><span class="p">(</span><span class="n">min-width</span> <span class="nv">$tablet-width</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</code></pre>
+<p>This creates two helpers called $tablet and $mobile. Let’s test the breakpoints by changing the background color based on the width of the browser.</p>
+<pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_layout.sass
+</span><span class="nt">body</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span>
+
+  <span class="k">@include</span> <span class="nd">media</span><span class="p">(</span><span class="nv">$tablet</span><span class="p">)</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">light-gray</span>
+
+  <span class="k">@include</span> <span class="nd">media</span><span class="p">(</span><span class="nv">$desktop</span><span class="p">)</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">gray</span>
+</pre></td></tr></tbody></table>
+</code></pre>
+<h2>Bring forth the Responsive Grid</h2>
+
+<p>Neat is a simple grid framework. It’s only function is to help you build a grid system for you. By default, Neat has 12 column grid.</p>
+
+<p>Let’s build a simple responsive grid. On mobile layout, it is a single column layout. For tablet and desktop, it is a two column layout.</p>
+
+<p>The default layout is a single <code>.grid-cell</code> which is 12 columns wide in the grid system. After the tablet breakpoint, the width of <code>.grid-cell</code> is set to 6 columns. The grid system width is 12 columns, so now the browser can fit two <code>.grid-cell</code>-elements in a one row. The same applies for desktop layout which is set to 6 columns as well.</p>
+
+<p>This is an example of mobile first approach. The default styles are applied on all screen sizes, from narrowest width. Then the wider variations for the tablet and desktop are added on the top of mobile layout.</p>
+<pre class="highlight scss"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_layout.scss
+</span><span class="nc">.grid-row</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">outer-container</span><span class="p">;</span>
+
+  <span class="nc">.grid-cell</span> <span class="p">{</span>
+    <span class="k">@include</span> <span class="nd">span-columns</span><span class="p">(</span><span class="m">12</span><span class="p">);</span>
+    <span class="k">@include</span> <span class="nd">media</span><span class="p">(</span><span class="nv">$tablet</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">@include</span> <span class="nd">span-columns</span><span class="p">(</span><span class="m">6</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">@include</span> <span class="nd">media</span><span class="p">(</span><span class="nv">$desktop</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">@include</span> <span class="nd">span-columns</span><span class="p">(</span><span class="m">6</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nc">.grid-single-cell</span> <span class="p">{</span>
+    <span class="k">@include</span> <span class="nd">span-columns</span><span class="p">(</span><span class="m">12</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</code></pre>
+<p>As a bonus, there is also a <code>.grid-single-cell</code> that always spans across 12 columns, filling the row. This is useful for “hero” content, like logo or login form.</p>
+
+<p>And last but not least, Bitters. Just throw it in your <code>application.css.scss</code> and your prototype starts to look clean and simple. It’s a simple default stylesheet that needs very little customising. Check out the Bitters <a href="http://bitters.bourbon.io/example.html">example page</a>. It looks so good, that it gives the impression that your prototype is an actual product. Then your prototype is ready to fulfil its purpose.</p>
+
+<h2>What About The Other Frameworks?</h2>
+
+<p>There are other options as well, <a href="http://purecss.io">Purecss</a>, <a href="http://foundation.zurb.com/">Foundation</a> or <a href="http://getbootstrap.com">Bootstrap</a>? These are complete solutions. They have communities building themes and extensions, with a lot of documentation found all over the web. The only down-side that I can think of is that these frameworks expect you to build your stylesheets following the philosophy of the framework.</p>
+
+<p>The idea behind Bourbon &amp; Neat are different than CSS frameworks. By using SASS mixins, you create only those CSS rules that you need, and keep the stylesheets nice and tidy. On the other hand, CSS Frameworks have all the bells and whistles with many different grid systems. This naturally makes the stylesheet bigger in size.</p>
+
+<p>In my opinion, both options are good, pick one that suits you better. It only matters if you get your prototype in front of people.</p>
+
+</div>
+<footer>
+<hr>
+<span><a href="/" class="internal-link">Home</a></span>
+<span><a href="../../../../about/" class="internal-link">About</a></span>
+<span><a href="../../../../now/" class="internal-link">Now</a></span>
+<span><a href="//github.com/tuomasj">Github</a></span>
+<span><a href="//twitter.com/tuomasj">Twitter</a></span>
+<span><a href="//linkedin.com/in/tuomasj">LinkedIn</a></span>
+</footer>
+
+</body>
+</html>

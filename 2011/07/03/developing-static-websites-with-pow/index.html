@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<title>Developing Static Websites With Pow and Mac OS X 10.6</title>
+<link href="/css/all.css" rel="stylesheet" />
+<script src="/js/jquery-1.12.0.min.js"></script><script src="/js/custom_analytics.js"></script>
+
+</head>
+<body class='x2011 x2011_07 x2011_07_03 x2011_07_03_developing-static-websites-with-pow x2011_07_03_developing-static-websites-with-pow_index'>
+
+<div class='page'>
+<h1>Developing Static Websites With Pow and Mac OS X 10.6</h1>
+<h2>Would you like to develop your static website on http://mystaticsite.dev?</h2>
+
+<p>This blog post describes a way to use Pow web server to host your static website. Pow will host your website locally, allowing access only from same computer.</p>
+
+<h2>Pow!!</h2>
+
+<p><a href="http://pow.cx">Pow</a> is a zero configuration Rack server for Mac OS X. Rack is a small software component written in Ruby. It is used to develop web servers, for example Ruby on Rails. Pow was developed by <a href="http://twitter.com/#!/sstephenson">Sam Stephenson</a> from <a href="http://www.37signals.com">37Signals</a> and you can follow the development at <a href="https://github.com/37signals/pow">Pow Github repository</a>.</p>
+
+<p>Since you are running Mac OS X, you already have Apache web server. There is nothing wrong with Apache, but if you feel like trying something new, try Pow. You might like it :)</p>
+
+<h2>Install Pow</h2>
+
+<p>Installing Pow is easy, but you need to use console a bit. Just go to Pow homepage, and follow the <a href="http://pow.cx/manual.html#section_1">installation instructions</a>. On the same page, there are uninstall instructions as well.</p>
+
+<p>To try if it really worked, open your browser and type some nonsense address with &lsquo;.dev&rsquo; at the end. Like http://nonsense.dev</p>
+
+<p>If you something like &ldquo;Application not found&rdquo;, it means Pow is running. There is also instructions how to create an app for that domain.</p>
+
+<h2>Concerning Your Static Site</h2>
+
+<p>To make things simple, let&rsquo;s assume you have a static website called &ldquo;MyStaticSite&rdquo; which is located in your Projects directory as &ldquo;MyStaticSite&rdquo;.</p>
+
+<p>Before you are ready to go, there is just one requirement for your static site. All your files must be located in &ldquo;public&rdquo; directory. So if your files are located at</p>
+<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>/Users/bobbytables/Projects/MyStaticSite
+</pre></td></tr></tbody></table>
+</code></pre>
+<p>You need to add a directory called &ldquo;public&rdquo; and move your files over there.</p>
+
+<p>When you created the directory and moved the files, your directory structure should be something like this:</p>
+<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>/Projects/MyStaticSite/
+  public/
+    index.html
+    stylesheet.css
+</pre></td></tr></tbody></table>
+</code></pre>
+<h2>Put Your App Online</h2>
+
+<p>This is the hard part. You need to use console and create a symlink. <a href="http://en.wikipedia.org/wiki/Symbolic_link">Symbolic link</a> is a &ldquo;fake&rdquo; file which points to another file. If you edit the fake file, you will change the original file. If you delete the original file, you will lose the fake file also. On the other hand, if you delete the fake file, you just lose the fake file. A fake file can also be a directory (folder) too and the same rules apply. This is the way Pow determines what directories it needs to serve.</p>
+
+<p>To get your static site to appear as http://mystaticsite.dev, you need to create a symbolic file from your site&rsquo;s directory, pointing to Pow configuration directory. You can create as many symlinks as you need. Open a console and type the following:</p>
+<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>cd ~/.pow
+ln -s ~/Projects/MyStaticSite
+</pre></td></tr></tbody></table>
+</code></pre>
+<p>If you are wondering why the &ldquo;.pow&rdquo; directory does not show up on finder or directory listing, it because it&rsquo;s an hidden directory. Every file or directory starting with period is hidden on Mac OS X . But even it&rsquo;s hidden, you can still access it. If you want to know more, <a href="http://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments">this</a> is a wikipedia article you need to read.</p>
+
+<p>Let&rsquo;s check, if your symlinking worked. Type is on console:</p>
+<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>ls -l
+</pre></td></tr></tbody></table>
+</code></pre>
+<p>The extra parameter will make symlinks show up properly. You should see a directory listing with arrows describing a symbolic link to the original directory.</p>
+
+<p>Another way of testing did it work is to launch up a browser and surfing to <strong>http://mystaticsite.dev</strong>.</p>
+
+<p>If it did not work, check that your symbolic link is pointing to right directory and it is created inside ~/.pow directory.</p>
+
+<h2>Is Pow Running Forever and Eating Up My Precious CPU and Battery?</h2>
+
+<p>No. If you read the <a href="http://pow.cx/manual.html#section_2">Pow manual</a>, it says that Pow will start a worker process on first connection and then terminates them after 15 minutes of inactivity. So, basicly a single Node.js application is waiting for connections to your static website address (e.g. http://mystaticsite.dev) and on first connection, it will start up two worker processes which server your files to you.</p>
+
+<h2>What Next?</h2>
+
+<p>Well, this is it. You&rsquo;re done! :)</p>
+
+<p>If you want to know more about Pow, go to <a href="http://pow.cx">Pow website</a>.</p>
+
+</div>
+<footer>
+<hr>
+<span><a href="/" class="internal-link">Home</a></span>
+<span><a href="../../../../about/" class="internal-link">About</a></span>
+<span><a href="../../../../now/" class="internal-link">Now</a></span>
+<span><a href="//github.com/tuomasj">Github</a></span>
+<span><a href="//twitter.com/tuomasj">Twitter</a></span>
+<span><a href="//linkedin.com/in/tuomasj">LinkedIn</a></span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<title>Generating Static HTML with Sinatra and Hating Meetings</title>
+<link href="/css/all.css" rel="stylesheet" />
+<script src="/js/jquery-1.12.0.min.js"></script><script src="/js/custom_analytics.js"></script>
+
+</head>
+<body class='x2012 x2012_06 x2012_06_10 x2012_06_10_generating-static-html-with-sinatra-and-hating-meetings x2012_06_10_generating-static-html-with-sinatra-and-hating-meetings_index'>
+
+<div class='page'>
+<h1>Generating Static HTML with Sinatra and Hating Meetings</h1>
+<p>This blog post is about rendering templates into actual files with Sinatra. If you are looking to render a static text file with Sinatra, try this:</p>
+<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>def jee
+  puts "Jee"
+end
+</pre></td></tr></tbody></table>
+</code></pre><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+  <span class="n">send_file</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'public'</span><span class="p">,</span> <span class="s1">'index.html'</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</code></pre><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+<span class="n">send_file</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'public'</span><span class="p">,</span> <span class="s1">'index.html'</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</code></pre>
+<p>If you don&rsquo;t want to read the backstory, jump to part about <a href="#rendering_templates_into_files_with_sinatra">generating HTML with Sinatra</a></p>
+
+<h2>Meetings, Meetings, Stop Wasting My Time</h2>
+
+<p>I&rsquo;ve always considered too many meetings are waste of time. Yes, you can get things done, but usually there are just too many participants, the meeting lacks a clear agenda, and just when the meeting is about to get into the point, time runs out and everybody scatters. Running a useful meeting is really hard.</p>
+
+<p>So I did what any hacker would do: I created an app that would fix the meetings.</p>
+
+<p>The plan was to spend minimal amount of time to come up with a solution that would be helpful in meetings. It was really simple online meeting timer. You start as you begin the meeting and timer starts running. You share the link with remote participants. Everyone is aware how much time the meeting has taken. Very minimal app, very limited functionality.</p>
+
+<p>I have had it running neglected for many years, without any love or attention from me. Surprisingly though, it has steady organic traffic. Very, very small, but steady. Based on the analytics, there are people actually using it! They press the &ldquo;Start Timer&rdquo; button! I&rsquo;m making a better world by helping out few people to run meetings more efficiently. Not exactly making a better world on Nobel-prize scale, but it&rsquo;s still better than nothing :)</p>
+
+<h2>The Rewrite of My Minimal Web App</h2>
+
+<p>Few weeks ago, we had a Coding Dojo in Oulu. During the event, We had a very good chat about the usefulness of Coffeescript, is the productivity gains really worth of learning Coffeescript. So when I got back home, I got this itch on my fingers. The kind of itch which makes you open up your code editor and write some code&hellip; I needed to write some Coffeescript.</p>
+
+<p>The meeting timer looked like a perfect candidate for a rewrite. Really limited functionality, few page web application. Besides, It was my last app running on PHP. Like I said, a perfect candidate.</p>
+
+<p>It took few evenings to finish the rewrite using Coffeescript and Backbone. During the rewrite, I stripped down the functionality bit more, leaving just the timer. Big thanks to <a href="http://twitter.com/sakamies">@sakamies</a> for helping out with the minimal user interface.</p>
+
+<p>I discovered that I could get HTML5 PushState to handle the URL functionality, so a server-side component was not even needed. I could host it on Amazon S3 as a static website.</p>
+
+<p>I forgot the original point my rewrite five minutes after writing the first line of code. I think there was some point during the chat that I wanted to test for myself, but it&rsquo;s all gone now :)</p>
+
+<h2>Running Sinatra as Part of Your Development Environment</h2>
+
+<p>I developed the app using <a href="http://www.sinatrarb.com">Sinatra</a> and <a href="https://github.com/rstacruz/sinatra-assetpack">Sinatra-assetpack</a> as part of my development environment. Assetpack complies Javascript into Coffeescript and SCSS into CSS. It runs on development mode, serving all JS/CSS assets as separate files and on production mode it squashes all assets into one file. Minified Javascript code has one file and minified CSS code has one file.</p>
+
+<p>Hosting it with Sinatra as a server felt overkill, since Sinatra only compiles the coffeescript and scss. I like to keep things simple and tidy. The alternative solution, running Sinatra locally and copying the HTML code from browser&rsquo;s &ldquo;view source&rdquo; window just felt so wrong.</p>
+
+<p>Generating a static website using Sinatra, that&rsquo;s the solution I was after.</p>
+
+<p>(For the record, I have LiveReload and I have written Guard tasks which compiles Coffeescript and SCSS)</p>
+
+<h2>Rendering Templates into Files with Sinatra</h2>
+
+<p>Rack has a MockRequest helper, which allows to simulate a HTTP request and outputs the request body. Sinatra is running on top of Rack, it spits out HTML which is rendered through Sinatra templating engine.</p>
+
+<p>Below is an example how to use it to get the response body without actually running Sinatra.</p>
+
+<h2>Example Usage</h2>
+
+<h3>Sinatra Application</h3>
+<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre># app.rb
+
+require 'sinatra'
+
+get '/' do
+  erb :index
+end
+</pre></td></tr></tbody></table>
+</code></pre>
+<h3>Application Layout File</h3>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre># views/layout.erb
+
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Sinatra Test<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Sinatra Test<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+    <span class="err">&lt;</span>%= yield %&gt;
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></td></tr></tbody></table>
+</code></pre>
+<h3>Index.erb Layout File</h3>
+<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre># views/index.erb
+
+&lt;p&gt;Content from index.erb&lt;/p&gt;
+</pre></td></tr></tbody></table>
+</code></pre>
+<h3>How to Simulate a HTTP Request</h3>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>sinatra/ $ irb
+irb(main):001:0&gt; require './app.rb'
+=&gt; true
+irb(main):002:0&gt; request = Rack::MockRequest.new(Sinatra::Application)
+=&gt; #<span class="nt">&lt;Rack::MockRequest:0x007fa842978b68</span> <span class="err">@</span><span class="na">app=</span><span class="s">Sinatra::Application</span><span class="nt">&gt;</span>
+irb(main):003:0&gt; puts request.get('/').body
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Sinatra Test<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Sinatra Test<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Content from index.erb<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+=&gt; nil
+</pre></td></tr></tbody></table>
+</code></pre>
+<p>The part which does all the heavy lifting is
+<code>
+request = Rack::MockRequest.new(Sinatra::Application)
+puts request.get(&#39;/&#39;).body
+</code></p>
+
+<h2>The End</h2>
+
+<p>I deploy the site with combination of Assetpack&rsquo;s rake tasks and my own custom rake task. Index.html gets built through Sinatra, using Assetpack&rsquo;s JS and CSS helpers. Assetpack compiles and minifies coffeescript and scss files.</p>
+
+<p>This is the way my minimal web app called <a href="http://www.meetingtimer.net">Meetingtimer.net</a> was done and deployed.</p>
+
+<p>Yet another web app polluting the Internet :)</p>
+
+</div>
+<footer>
+<hr>
+<span><a href="/" class="internal-link">Home</a></span>
+<span><a href="../../../../about/" class="internal-link">About</a></span>
+<span><a href="../../../../now/" class="internal-link">Now</a></span>
+<span><a href="//github.com/tuomasj">Github</a></span>
+<span><a href="//twitter.com/tuomasj">Twitter</a></span>
+<span><a href="//linkedin.com/in/tuomasj">LinkedIn</a></span>
+</footer>
+
+</body>
+</html>
