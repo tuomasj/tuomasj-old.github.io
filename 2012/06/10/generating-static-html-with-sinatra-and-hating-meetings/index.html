@@ -13,28 +13,25 @@
 <div class='page'>
 <h1>Generating Static HTML with Sinatra and Hating Meetings</h1>
 <p>This blog post is about rendering templates into actual files with Sinatra. If you are looking to render a static text file with Sinatra, try this:</p>
-<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>def jee
   puts "Jee"
 end
-</pre></td></tr></tbody></table>
-</code></pre><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td></tr></tbody></table></code></pre></div><div class="highlight"><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
   <span class="n">send_file</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'public'</span><span class="p">,</span> <span class="s1">'index.html'</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></td></tr></tbody></table>
-</code></pre><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td></tr></tbody></table></code></pre></div><div class="highlight"><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
 <span class="n">send_file</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'public'</span><span class="p">,</span> <span class="s1">'index.html'</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>If you don&rsquo;t want to read the backstory, jump to part about <a href="#rendering_templates_into_files_with_sinatra">generating HTML with Sinatra</a></p>
 
 <h2>Meetings, Meetings, Stop Wasting My Time</h2>
@@ -78,7 +75,7 @@ end
 <h2>Example Usage</h2>
 
 <h3>Sinatra Application</h3>
-<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -92,10 +89,9 @@ require 'sinatra'
 get '/' do
   erb :index
 end
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <h3>Application Layout File</h3>
-<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -117,23 +113,21 @@ end
 <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Sinatra Test<span class="nt">&lt;/h1&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-    <span class="err">&lt;</span>%= yield %&gt;
+    <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">yield</span> <span class="err">%</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <h3>Index.erb Layout File</h3>
-<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre># views/index.erb
 
 &lt;p&gt;Content from index.erb&lt;/p&gt;
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <h3>How to Simulate a HTTP Request</h3>
-<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -169,8 +163,7 @@ irb(main):003:0&gt; puts request.get('/').body
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 =&gt; nil
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>The part which does all the heavy lifting is
 <code>
 request = Rack::MockRequest.new(Sinatra::Application)

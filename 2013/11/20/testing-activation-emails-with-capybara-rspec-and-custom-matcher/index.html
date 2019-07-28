@@ -20,7 +20,7 @@ we leave the user in very confused state on the next sign in. That is bad UX and
 <p>In a scenario, I wanted to test that an activation link exists in the activation email.</p>
 
 <p><strong>Here is my first try:</strong></p>
-<pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -34,8 +34,7 @@ we leave the user in very confused state on the next sign in. That is bad UX and
   <span class="n">visit</span> <span class="n">activation_path</span><span class="p">(</span><span class="n">activation_token</span><span class="p">)</span>
   <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span><span class="p">(</span> <span class="s2">"Your email has been confirmed."</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>It opens the last sent email and checks if there are any links that have a href-attribute which ends with the activation token.
 I&rsquo;m writing a app which is being localized into two languages, and locale is based on the domain.
 I want to be sure that the activation code exists in the email. That is why I need to check all the links in the email,
@@ -48,7 +47,7 @@ I use them so rarely, that I probably forget what that selector means in couple 
 I want to have much better spec. I want my specs to be descriptive.</p>
 
 <p><strong>This looks better</strong></p>
-<pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -62,14 +61,13 @@ I want to have much better spec. I want my specs to be descriptive.</p>
   <span class="n">visit</span> <span class="n">activation_path</span><span class="p">(</span><span class="n">activation_token</span><span class="p">)</span>
   <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span><span class="p">(</span> <span class="s2">"Your email has been confirmed."</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>This looks better. Now it&rsquo;s clear that email body needs to have a link with href-attribute that ends with the activation token.
 To get that spec working, we need a custom matcher. It&rsquo;s easy to do when you look <a href="https://github.com/jnicklas/capybara/blob/master/lib/capybara/rspec/matchers.rb">matchers</a> from Capybara source code and use it as an example for
 building your own custom matcher for Capybara and RSpec.</p>
 
 <p>This is the custom matcher. It&rsquo;s simple, it just hides the logic of testing the end of a href-attribute inside a matcher.</p>
-<pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight ruby"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -111,7 +109,7 @@ building your own custom matcher for Capybara and RSpec.</p>
 <span class="k">module</span> <span class="nn">Capybara</span>
   <span class="k">module</span> <span class="nn">RSpecMatchers</span>
     <span class="k">class</span> <span class="nc">HaveLinkEndswith</span> <span class="o">&lt;</span> <span class="no">Matcher</span>
-      <span class="kp">attr_reader</span> <span class="ss">:matching_value</span>
+      <span class="nb">attr_reader</span> <span class="ss">:matching_value</span>
 
       <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
         <span class="vi">@matching_value</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="nf">first</span>
@@ -145,8 +143,7 @@ building your own custom matcher for Capybara and RSpec.</p>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>I have also saved these files into a <a href="https://gist.github.com/tuomasj/7584071">Gist</a> in Github.</p>
 
 </div>

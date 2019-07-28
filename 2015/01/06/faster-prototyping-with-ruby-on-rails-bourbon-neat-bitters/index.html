@@ -23,7 +23,7 @@
 <p>First, let’s install Bourbon and Neat. Go ahead and read the installation instructions for both projects. Neat is a set of functions (they are called mixins) that help building a responsive grid for your prototype. To use Bourbon and other libraries, you need to use SCSS or SASS, normal CSS will not work.</p>
 
 <p>Second, structure the files so you don’t get overwhelmed by the stylesheets. It helps to keep the stylesheets organised in small files. I keep my application.css.scss small. No styles, just import other files. For these examples, I&rsquo;m using SCSS since it&rsquo;s looks almost like CSS, so everybody who knows CSS can understand these examples.</p>
-<pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -34,40 +34,38 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="c1">// application.css.sass
-</span>
-<span class="c1">// import libraries &amp; frameworks
-</span><span class="k">@import</span> <span class="s">"normalize"</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// application.css.sass</span>
+
+<span class="c1">// import libraries &amp; frameworks</span>
+<span class="k">@import</span> <span class="s">"normalize"</span>
 <span class="k">@import</span> <span class="s">"bourbon"</span>
 <span class="k">@import</span> <span class="s">"base/base"</span>
 <span class="k">@import</span> <span class="s">"neat"</span>
 
-<span class="c1">// import application specific files
-</span><span class="k">@import</span> <span class="s">"partials/responsive"</span>
+<span class="c1">// import application specific files</span>
+<span class="k">@import</span> <span class="s">"partials/responsive"</span>
 <span class="k">@import</span> <span class="s">"partials/layout"</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <h2>Start with Mobile First</h2>
 
 <p>Build your stylesheets for mobile first. Design the layout for mobile, and then add special rules for tablet and desktop layouts. Use <a href="http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint">Neat breakpoints</a> to create a small set of media query helpers that you can use in your stylesheet.</p>
-<pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_responsive.sass
-</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_responsive.sass</span>
+
 <span class="nv">$mobile-width</span><span class="p">:</span> <span class="m">480px</span>
 <span class="nv">$tablet-width</span><span class="p">:</span> <span class="m">760px</span>
 
 <span class="nv">$tablet</span><span class="p">:</span> <span class="nf">new-breakpoint</span><span class="p">(</span><span class="n">min-width</span> <span class="nv">$mobile-width</span> <span class="n">max-width</span> <span class="nv">$tablet-width</span><span class="p">)</span>
 <span class="nv">$desktop</span><span class="p">:</span> <span class="nf">new-breakpoint</span><span class="p">(</span><span class="n">min-width</span> <span class="nv">$tablet-width</span><span class="p">)</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>This creates two helpers called $tablet and $mobile. Let’s test the breakpoints by changing the background color based on the width of the browser.</p>
-<pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight sass"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -76,8 +74,8 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_layout.sass
-</span><span class="nt">body</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_layout.sass</span>
+<span class="nt">body</span>
   <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span>
 
   <span class="k">@include</span> <span class="nd">media</span><span class="p">(</span><span class="nv">$tablet</span><span class="p">)</span>
@@ -85,8 +83,7 @@
 
   <span class="k">@include</span> <span class="nd">media</span><span class="p">(</span><span class="nv">$desktop</span><span class="p">)</span>
     <span class="nl">background-color</span><span class="p">:</span> <span class="no">gray</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <h2>Bring forth the Responsive Grid</h2>
 
 <p>Neat is a simple grid framework. It’s only function is to help you build a grid system for you. By default, Neat has 12 column grid.</p>
@@ -96,7 +93,7 @@
 <p>The default layout is a single <code>.grid-cell</code> which is 12 columns wide in the grid system. After the tablet breakpoint, the width of <code>.grid-cell</code> is set to 6 columns. The grid system width is 12 columns, so now the browser can fit two <code>.grid-cell</code>-elements in a one row. The same applies for desktop layout which is set to 6 columns as well.</p>
 
 <p>This is an example of mobile first approach. The default styles are applied on all screen sizes, from narrowest width. Then the wider variations for the tablet and desktop are added on the top of mobile layout.</p>
-<pre class="highlight scss"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight scss"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -115,8 +112,8 @@
 17
 18
 19
-</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_layout.scss
-</span><span class="nc">.grid-row</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// partials/_layout.scss</span>
+<span class="nc">.grid-row</span> <span class="p">{</span>
   <span class="k">@include</span> <span class="nd">outer-container</span><span class="p">;</span>
 
   <span class="nc">.grid-cell</span> <span class="p">{</span>
@@ -134,8 +131,7 @@
     <span class="k">@include</span> <span class="nd">span-columns</span><span class="p">(</span><span class="m">12</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>As a bonus, there is also a <code>.grid-single-cell</code> that always spans across 12 columns, filling the row. This is useful for “hero” content, like logo or login form.</p>
 
 <p>And last but not least, Bitters. Just throw it in your <code>application.css.scss</code> and your prototype starts to look clean and simple. It’s a simple default stylesheet that needs very little customising. Check out the Bitters <a href="http://bitters.bourbon.io/example.html">example page</a>. It looks so good, that it gives the impression that your prototype is an actual product. Then your prototype is ready to fulfil its purpose.</p>

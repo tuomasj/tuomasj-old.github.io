@@ -35,14 +35,13 @@
 <p>To make things simple, let&rsquo;s assume you have a static website called &ldquo;MyStaticSite&rdquo; which is located in your Projects directory as &ldquo;MyStaticSite&rdquo;.</p>
 
 <p>Before you are ready to go, there is just one requirement for your static site. All your files must be located in &ldquo;public&rdquo; directory. So if your files are located at</p>
-<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>/Users/bobbytables/Projects/MyStaticSite
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>You need to add a directory called &ldquo;public&rdquo; and move your files over there.</p>
 
 <p>When you created the directory and moved the files, your directory structure should be something like this:</p>
-<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -50,26 +49,23 @@
   public/
     index.html
     stylesheet.css
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <h2>Put Your App Online</h2>
 
 <p>This is the hard part. You need to use console and create a symlink. <a href="http://en.wikipedia.org/wiki/Symbolic_link">Symbolic link</a> is a &ldquo;fake&rdquo; file which points to another file. If you edit the fake file, you will change the original file. If you delete the original file, you will lose the fake file also. On the other hand, if you delete the fake file, you just lose the fake file. A fake file can also be a directory (folder) too and the same rules apply. This is the way Pow determines what directories it needs to serve.</p>
 
 <p>To get your static site to appear as http://mystaticsite.dev, you need to create a symbolic file from your site&rsquo;s directory, pointing to Pow configuration directory. You can create as many symlinks as you need. Open a console and type the following:</p>
-<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>cd ~/.pow
 ln -s ~/Projects/MyStaticSite
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>If you are wondering why the &ldquo;.pow&rdquo; directory does not show up on finder or directory listing, it because it&rsquo;s an hidden directory. Every file or directory starting with period is hidden on Mac OS X . But even it&rsquo;s hidden, you can still access it. If you want to know more, <a href="http://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments">this</a> is a wikipedia article you need to read.</p>
 
 <p>Let&rsquo;s check, if your symlinking worked. Type is on console:</p>
-<pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>ls -l
-</pre></td></tr></tbody></table>
-</code></pre>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>The extra parameter will make symlinks show up properly. You should see a directory listing with arrows describing a symbolic link to the original directory.</p>
 
 <p>Another way of testing did it work is to launch up a browser and surfing to <strong>http://mystaticsite.dev</strong>.</p>

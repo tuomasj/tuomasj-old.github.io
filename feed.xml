@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/2016/12/31/my-history-with-programming-languages/"/>
     <id>http://blog.url.com/2016/12/31/my-history-with-programming-languages/</id>
     <published>2016-12-31T02:00:00+02:00</published>
-    <updated>2017-01-01T00:13:28+02:00</updated>
+    <updated>2019-07-28T23:37:17+03:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -99,7 +99,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
     <link rel="alternate" href="http://blog.url.com/2016/04/23/service-designing-my-dream-hotel/"/>
     <id>http://blog.url.com/2016/04/23/service-designing-my-dream-hotel/</id>
     <published>2016-04-23T03:00:00+03:00</published>
-    <updated>2016-12-31T23:19:45+02:00</updated>
+    <updated>2019-07-28T23:37:17+03:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -167,10 +167,10 @@ I could reference a specific point in memory, read and write bytes into it, but 
   </entry>
   <entry>
     <title>I Spend $604 per Year on Internet Services</title>
-    <link rel="alternate" href="http://blog.url.com/2015/08/01/I-spend-604-dollars-per-year-on-internet-services/"/>
-    <id>http://blog.url.com/2015/08/01/I-spend-604-dollars-per-year-on-internet-services/</id>
+    <link rel="alternate" href="http://blog.url.com/2015/08/01/i-spend-604-dollars-per-year-on-internet-services/"/>
+    <id>http://blog.url.com/2015/08/01/i-spend-604-dollars-per-year-on-internet-services/</id>
     <published>2015-08-01T03:00:00+03:00</published>
-    <updated>2016-12-31T23:19:45+02:00</updated>
+    <updated>2019-07-28T23:37:17+03:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -192,7 +192,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
     <link rel="alternate" href="http://blog.url.com/2015/01/06/faster-prototyping-with-ruby-on-rails-bourbon-neat-bitters/"/>
     <id>http://blog.url.com/2015/01/06/faster-prototyping-with-ruby-on-rails-bourbon-neat-bitters/</id>
     <published>2015-01-06T02:00:00+02:00</published>
-    <updated>2016-12-31T23:19:45+02:00</updated>
+    <updated>2019-07-28T23:37:17+03:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -207,7 +207,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
 &lt;p&gt;First, let’s install Bourbon and Neat. Go ahead and read the installation instructions for both projects. Neat is a set of functions (they are called mixins) that help building a responsive grid for your prototype. To use Bourbon and other libraries, you need to use SCSS or SASS, normal CSS will not work.&lt;/p&gt;
 
 &lt;p&gt;Second, structure the files so you don’t get overwhelmed by the stylesheets. It helps to keep the stylesheets organised in small files. I keep my application.css.scss small. No styles, just import other files. For these examples, I&amp;rsquo;m using SCSS since it&amp;rsquo;s looks almost like CSS, so everybody who knows CSS can understand these examples.&lt;/p&gt;
-&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+&lt;div class="highlight"&gt;&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
 2
 3
 4
@@ -218,40 +218,38 @@ I could reference a specific point in memory, read and write bytes into it, but 
 9
 10
 11
-&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// application.css.sass
-&lt;/span&gt;
-&lt;span class="c1"&gt;// import libraries &amp;amp; frameworks
-&lt;/span&gt;&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"normalize"&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// application.css.sass&lt;/span&gt;
+
+&lt;span class="c1"&gt;// import libraries &amp;amp; frameworks&lt;/span&gt;
+&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"normalize"&lt;/span&gt;
 &lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"bourbon"&lt;/span&gt;
 &lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"base/base"&lt;/span&gt;
 &lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"neat"&lt;/span&gt;
 
-&lt;span class="c1"&gt;// import application specific files
-&lt;/span&gt;&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"partials/responsive"&lt;/span&gt;
+&lt;span class="c1"&gt;// import application specific files&lt;/span&gt;
+&lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"partials/responsive"&lt;/span&gt;
 &lt;span class="k"&gt;@import&lt;/span&gt; &lt;span class="s"&gt;"partials/layout"&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Start with Mobile First&lt;/h2&gt;
 
 &lt;p&gt;Build your stylesheets for mobile first. Design the layout for mobile, and then add special rules for tablet and desktop layouts. Use &lt;a href="http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint"&gt;Neat breakpoints&lt;/a&gt; to create a small set of media query helpers that you can use in your stylesheet.&lt;/p&gt;
-&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+&lt;div class="highlight"&gt;&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
 2
 3
 4
 5
 6
 7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_responsive.sass
-&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_responsive.sass&lt;/span&gt;
+
 &lt;span class="nv"&gt;$mobile-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;480px&lt;/span&gt;
 &lt;span class="nv"&gt;$tablet-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;760px&lt;/span&gt;
 
 &lt;span class="nv"&gt;$tablet&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;new-breakpoint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min-width&lt;/span&gt; &lt;span class="nv"&gt;$mobile-width&lt;/span&gt; &lt;span class="n"&gt;max-width&lt;/span&gt; &lt;span class="nv"&gt;$tablet-width&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nv"&gt;$desktop&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;new-breakpoint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min-width&lt;/span&gt; &lt;span class="nv"&gt;$tablet-width&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This creates two helpers called $tablet and $mobile. Let’s test the breakpoints by changing the background color based on the width of the browser.&lt;/p&gt;
-&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+&lt;div class="highlight"&gt;&lt;pre class="highlight sass"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
 2
 3
 4
@@ -260,8 +258,8 @@ I could reference a specific point in memory, read and write bytes into it, but 
 7
 8
 9
-&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_layout.sass
-&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_layout.sass&lt;/span&gt;
+&lt;span class="nt"&gt;body&lt;/span&gt;
   &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;white&lt;/span&gt;
 
   &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;media&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$tablet&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -269,8 +267,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
 
   &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;media&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$desktop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="nl"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;gray&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Bring forth the Responsive Grid&lt;/h2&gt;
 
 &lt;p&gt;Neat is a simple grid framework. It’s only function is to help you build a grid system for you. By default, Neat has 12 column grid.&lt;/p&gt;
@@ -280,7 +277,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
 &lt;p&gt;The default layout is a single &lt;code&gt;.grid-cell&lt;/code&gt; which is 12 columns wide in the grid system. After the tablet breakpoint, the width of &lt;code&gt;.grid-cell&lt;/code&gt; is set to 6 columns. The grid system width is 12 columns, so now the browser can fit two &lt;code&gt;.grid-cell&lt;/code&gt;-elements in a one row. The same applies for desktop layout which is set to 6 columns as well.&lt;/p&gt;
 
 &lt;p&gt;This is an example of mobile first approach. The default styles are applied on all screen sizes, from narrowest width. Then the wider variations for the tablet and desktop are added on the top of mobile layout.&lt;/p&gt;
-&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
+&lt;div class="highlight"&gt;&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;table class="rouge-table"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="rouge-gutter gl"&gt;&lt;pre class="lineno"&gt;1
 2
 3
 4
@@ -299,8 +296,8 @@ I could reference a specific point in memory, read and write bytes into it, but 
 17
 18
 19
-&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_layout.scss
-&lt;/span&gt;&lt;span class="nc"&gt;.grid-row&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class="rouge-code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// partials/_layout.scss&lt;/span&gt;
+&lt;span class="nc"&gt;.grid-row&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;outer-container&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
   &lt;span class="nc"&gt;.grid-cell&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -318,8 +315,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
     &lt;span class="k"&gt;@include&lt;/span&gt; &lt;span class="nd"&gt;span-columns&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
   &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As a bonus, there is also a &lt;code&gt;.grid-single-cell&lt;/code&gt; that always spans across 12 columns, filling the row. This is useful for “hero” content, like logo or login form.&lt;/p&gt;
 
 &lt;p&gt;And last but not least, Bitters. Just throw it in your &lt;code&gt;application.css.scss&lt;/code&gt; and your prototype starts to look clean and simple. It’s a simple default stylesheet that needs very little customising. Check out the Bitters &lt;a href="http://bitters.bourbon.io/example.html"&gt;example page&lt;/a&gt;. It looks so good, that it gives the impression that your prototype is an actual product. Then your prototype is ready to fulfil its purpose.&lt;/p&gt;
@@ -338,7 +334,7 @@ I could reference a specific point in memory, read and write bytes into it, but 
     <link rel="alternate" href="http://blog.url.com/2014/12/31/prototyping-cost-for-web-application-is-approaching-zero/"/>
     <id>http://blog.url.com/2014/12/31/prototyping-cost-for-web-application-is-approaching-zero/</id>
     <published>2014-12-31T02:00:00+02:00</published>
-    <updated>2016-12-31T23:19:45+02:00</updated>
+    <updated>2019-07-28T23:37:17+03:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -385,7 +381,7 @@ With this kind of minimal cost structure approach, running 10 prototypes on the 
     <link rel="alternate" href="http://blog.url.com/2014/08/13/my-talk-at-oulu-agile-seminar/"/>
     <id>http://blog.url.com/2014/08/13/my-talk-at-oulu-agile-seminar/</id>
     <published>2014-08-13T03:00:00+03:00</published>
-    <updated>2016-12-31T23:19:45+02:00</updated>
+    <updated>2019-07-28T23:37:17+03:00</updated>
     <author>
       <name>Article Author</name>
     </author>

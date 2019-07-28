@@ -59,7 +59,7 @@
 </table>
 
 <p>This is my shell script that opens three windows like in the pictures above.</p>
-<pre class="highlight shell"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlight"><pre class="highlight shell"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -102,21 +102,21 @@
 <span class="nv">CURRENT_SESSION</span><span class="o">=</span><span class="k">${</span><span class="nv">PWD</span><span class="p">##*/</span><span class="k">}</span>
 
 <span class="c"># Do we have Rakefile in the directory?</span>
-<span class="k">if</span> <span class="o">[</span> ! -f Rakefile <span class="o">]</span>
+<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-f</span> Rakefile <span class="o">]</span>
 <span class="k">then
   </span><span class="nb">echo</span> <span class="s2">"Rakefile not found in current directory"</span>
-  <span class="nb">exit </span>1;
+  <span class="nb">exit </span>1<span class="p">;</span>
 <span class="k">fi</span>
 
 <span class="c"># Make sure there is a task to start up the server</span>
-<span class="k">if</span> ! grep -q <span class="s2">"task :server"</span> Rakefile
+<span class="k">if</span> <span class="o">!</span> <span class="nb">grep</span> <span class="nt">-q</span> <span class="s2">"task :server"</span> Rakefile
 <span class="k">then
   </span><span class="nb">echo</span> <span class="s2">"No server task found in Rakefile"</span>
-  <span class="nb">exit </span>1;
+  <span class="nb">exit </span>1<span class="p">;</span>
 <span class="k">fi</span>
 
 <span class="c"># Start up the tmux session with specific name</span>
-tmux new-session -d -s <span class="nv">$CURRENT_SESSION</span>
+tmux new-session <span class="nt">-d</span> <span class="nt">-s</span> <span class="nv">$CURRENT_SESSION</span>
 
 <span class="c"># VIM window</span>
 tmux send-keys <span class="s1">'vim'</span> <span class="s1">'C-m'</span>
@@ -133,12 +133,11 @@ tmux send-keys <span class="s1">'mailcatcher'</span> <span class="s1">'C-m'</spa
 tmux send-keys <span class="s1">'rake server'</span> <span class="s1">'C-m'</span>
 
 <span class="c"># Select the first window</span>
-tmux <span class="k">select</span>-window -t 1
+tmux <span class="k">select</span><span class="nt">-window</span> <span class="nt">-t</span> 1
 
 <span class="c"># Attach the tmux session</span>
-tmux attach -t <span class="nv">$CURRENT_SESSION</span>
-</pre></td></tr></tbody></table>
-</code></pre>
+tmux attach <span class="nt">-t</span> <span class="nv">$CURRENT_SESSION</span>
+</pre></td></tr></tbody></table></code></pre></div>
 <p>I constantly switch between windows, using the Tmux keyboard shortcuts. I have slightly customized my Tmux, so I just press <code>&quot;Ctrl-a n&quot;</code> or <code>&quot;Ctrl-a p&quot;</code> to cycle through the windows. (Press &lsquo;control&rsquo; and &lsquo;a&rsquo; at the same time and then press &lsquo;n&rsquo;)</p>
 
 <h2>Running RSpec from Vim</h2>
